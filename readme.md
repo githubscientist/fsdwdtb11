@@ -4,9 +4,9 @@
 
 -[x] What is NPM?  
 -[x] Understanding NPM packages  
--[ ] What is React?  
--[ ] What is Single page application (SPA)?  
--[ ] Library vs framework  
+-[x] What is React?  
+-[x] What is Single page application (SPA)?  
+-[x] Library vs framework  
 -[ ] Setting up react project using Vite  
 -[ ] Understanding React folder skeleton
 
@@ -57,7 +57,13 @@
 
 ### What is React?
 
+- React is a JavaScript library for building user interfaces.
+- It is maintained by Facebook and a community of individual developers and companies.
+- React allows developers to create reusable UI components and build complex user interfaces.
+
 ### What is Single page application (SPA)?
+
+- A single-page application (SPA) is a web application that interacts with the user by dynamically rewriting the current page rather than loading entire new pages from the server.
 
 ### Setting up react project without using create-react-app or vite from scratch
 
@@ -66,3 +72,104 @@
 3. Install the required packages:
    - `npm install react react-dom`
    - `npm install -D @babel/core @babel/preset-env @babel/preset-react babel-loader webpack webpack-cli webpack-dev-server html-webpack-plugin`
+4. Create a `webpack.config.js` file with the following configuration:
+   ```js
+   const path = require("path");
+   const HtmlWebpackPlugin = require("html-webpack-plugin");
+   ```
+
+module.exports = {
+entry: './src/index.js',
+output: {
+path: path.resolve(\_\_dirname, 'dist'),
+filename: 'bundle.js'
+},
+module: {
+rules: [
+{
+test: /\.(js|jsx)$/,
+exclude: /node_modules/,
+use: {
+loader: 'babel-loader'
+}
+},
+]
+},
+resolve: {
+extensions: ['.js', '.jsx']
+},
+plugins: [
+new HtmlWebpackPlugin({
+template: './public/index.html'
+}),
+],
+devServer: {
+static: './dist',
+port: 3000,
+open: true,
+hot: true
+}
+}
+
+````
+
+5. Create a `.babelrc` file with the following configuration:
+
+   ```json
+   {
+     "presets": ["@babel/preset-env", "@babel/preset-react"]
+   }
+````
+
+6. Create a `src` directory and add an `index.js` file with the following code:
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+
+7. Create an `App.jsx` file in the `src` directory with the following code:
+
+```js
+import React from "react";
+
+const App = () => {
+  return (
+    <div>
+      <h1>Hello, React!</h1>
+    </div>
+  );
+};
+
+export default App;
+```
+
+8. Create a `public` directory and add an `index.html` file with the following code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React from Scratch</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+9. Add the following scripts to the `package.json` file:
+
+```json
+"scripts": {
+"start": "webpack serve --mode development",
+"build": "webpack --mode production"
+}
+```
+
+10. Run `npm start` to start the development server and view the React app in the browser.
