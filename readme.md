@@ -7,8 +7,8 @@
 -[x] What is React?  
 -[x] What is Single page application (SPA)?  
 -[x] Library vs framework  
--[ ] Setting up react project using Vite  
--[ ] Understanding React folder skeleton
+-[x] Setting up react project using Vite  
+-[x] Understanding React folder skeleton
 
 ### What is NPM?
 
