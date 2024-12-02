@@ -2,7 +2,7 @@
 
 ## Topics
 
--[ ] What is NPM?  
+-[x] What is NPM?  
 -[ ] Understanding NPM packages  
 -[ ] What is React?  
 -[ ] What is Single page application (SPA)?  
@@ -14,3 +14,4 @@
 
 - NPM stands for Node Package Manager.
 - It is a default package manager for JavaScript programming language.
+- It is used to install, share, and distribute code and manage dependencies in a project.

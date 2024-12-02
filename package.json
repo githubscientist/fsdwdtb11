@@ -1,0 +1,19 @@
+{
+  "name": "fsdwdtb11",
+  "version": "1.0.0",
+  "description": "This is a reference repository for the batch FSD-WD-T-B11.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/githubscientist/fsdwdtb11.git"
+  },
+  "author": "Sathish Gnanaprakasam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/githubscientist/fsdwdtb11/issues"
+  },
+  "homepage": "https://github.com/githubscientist/fsdwdtb11#readme"
+}
