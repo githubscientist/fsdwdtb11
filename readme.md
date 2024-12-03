@@ -5,9 +5,9 @@
 -[x] Component in react  
 -[x] What is JSX?  
 -[x] Passing Data Using Props  
--[ ] Parent to child data Passing  
--[ ] Child to Parent Data Passing  
--[ ] Prop Drilling & its Disadvantage
+-[x] Parent to child data Passing  
+-[x] Child to Parent Data Passing  
+-[x] Prop Drilling & its Disadvantage
 
 ### Setting up React App using Vite
 
@@ -34,3 +34,12 @@ npm install
 ```
 npm run dev
 ```
+
+### Props Drilling
+
+When you have a deeply nested component structure, passing props from the top-level component to the bottom-level component can be cumbersome. This is known as prop drilling.
+
+### Disadvantages of Prop Drilling
+
+1. Prop drilling makes the code harder to maintain.
+2. The data is unncessarily passed through the intermediate components, which can be a performance issue.

@@ -1,18 +1,11 @@
-import Header from "./components/Header";
+import B from "./components/B";
 
 const App = () => {
+  const time = new Date().toLocaleTimeString();
 
-  const sendMessage = (msg) => {
-    console.log(msg);
-  }
-
-  return (
-    <>
-      <Header
-        sendMessage={sendMessage}
-      />
-    </>
-  )
+  return <B
+    time={time}
+  />
 }
 
 export default App;
