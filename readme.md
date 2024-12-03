@@ -2,9 +2,9 @@
 
 ## Topics
 
--[ ] Component in react  
--[ ] What is JSX?  
--[ ] Passing Data Using Props  
+-[x] Component in react  
+-[x] What is JSX?  
+-[x] Passing Data Using Props  
 -[ ] Parent to child data Passing  
 -[ ] Child to Parent Data Passing  
 -[ ] Prop Drilling & its Disadvantage

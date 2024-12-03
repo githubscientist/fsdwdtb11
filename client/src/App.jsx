@@ -1,11 +1,18 @@
 import Header from "./components/Header";
 
 const App = () => {
+
   return (
     <>
-      <Header />
-      <Header />
-      <Header />
+      <Header
+        name="Krish"
+      />
+      <Header
+        name="Kartik"
+      />
+      <Header
+        name="Karan"
+      />
     </>
   )
 }
