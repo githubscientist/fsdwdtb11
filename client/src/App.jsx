@@ -2,16 +2,14 @@ import Header from "./components/Header";
 
 const App = () => {
 
+  const sendMessage = (msg) => {
+    console.log(msg);
+  }
+
   return (
     <>
       <Header
-        name="Krish"
-      />
-      <Header
-        name="Kartik"
-      />
-      <Header
-        name="Karan"
+        sendMessage={sendMessage}
       />
     </>
   )
