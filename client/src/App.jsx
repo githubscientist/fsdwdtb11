@@ -1,6 +1,4 @@
-const Header = () => {
-  return <h1>Hello World!</h1>;
-}
+import Header from "./components/Header";
 
 const App = () => {
   return (
