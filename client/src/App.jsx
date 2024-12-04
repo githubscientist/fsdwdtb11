@@ -1,20 +1,12 @@
-import Timer from "./components/Timer";
+import DisplayTemperature from "./components/DisplayTemperature";
 
 const App = () => {
-  const time = new Date().toLocaleTimeString();
 
-  const getMessage = (msg) => {
-    console.log(msg);
-  }
+  const temperature = 20;
 
-  return (
-    <>
-      <Timer
-        time={time}
-        getMessage={getMessage}
-      />
-    </>
-  )
+  return <DisplayTemperature
+    temperature={temperature}
+  />
 }
 
 export default App;
