@@ -1,11 +1,12 @@
-import DisplayTemperature from "./components/DisplayTemperature";
+import ChildComponent from "./components/ChildComponent";
 
 const App = () => {
+  const messageFromChild = (message) => {
+    console.log(message);
+  }
 
-  const temperature = 20;
-
-  return <DisplayTemperature
-    temperature={temperature}
+  return <ChildComponent
+    messageFromChild={messageFromChild}
   />
 }
 
