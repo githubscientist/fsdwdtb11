@@ -24,17 +24,15 @@ const App = () => {
       })
   }, []);
 
-  for (let i = 0; i < posts.length; i++) {
-    list.push(<li>{posts[i].title}</li>)
-  }
-
-  console.log(list);
-
   return (
     <>
       <h1>Posts</h1>
       <ul>
-        {list}
+        {
+          posts.map((post) => {
+            return <li>{post.title}</li>
+          })
+        }
       </ul>
     </>
   )
