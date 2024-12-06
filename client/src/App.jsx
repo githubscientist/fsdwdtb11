@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 const App = () => {
 
   const [posts, setPosts] = useState([]);
+  const list = [];
 
   // runs on component render and on every state change for posts
   useEffect(() => {
@@ -23,9 +24,18 @@ const App = () => {
       })
   }, []);
 
+  for (let i = 0; i < posts.length; i++) {
+    list.push(<li>{posts[i].title}</li>)
+  }
+
+  console.log(list);
+
   return (
     <>
       <h1>Posts</h1>
+      <ul>
+        {list}
+      </ul>
     </>
   )
 }
