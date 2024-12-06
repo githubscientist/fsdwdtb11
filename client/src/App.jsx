@@ -29,9 +29,7 @@ const App = () => {
       <h1>Posts</h1>
       <ul>
         {
-          posts.map((post) => {
-            return <li>{post.title}</li>
-          })
+          posts.map((post, index) => <li key={index}>{post.title}</li>)
         }
       </ul>
     </>
