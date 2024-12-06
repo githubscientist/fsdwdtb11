@@ -2,15 +2,23 @@ import { useState } from "react";
 
 const App = () => {
 
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
+  const [reactions, setReactions] = useState({
+    likes: 0,
+    dislikes: 0
+  });
 
   function handleLike() {
-    setLikes(likes + 1);
+    setReactions({
+      ...reactions,
+      likes: reactions.likes + 1
+    });
   }
 
   function handleDislike() {
-    setDislikes(dislikes + 1);
+    setReactions({
+      ...reactions,
+      dislikes: reactions.dislikes + 1
+    })
   }
 
   return (
@@ -23,8 +31,8 @@ const App = () => {
         thumb_down
       </span></button>
       <div>
-        <p>Likes: {likes}</p>
-        <p>Dislikes: {dislikes}</p>
+        <p>Likes: {reactions.likes}</p>
+        <p>Dislikes: {reactions.dislikes}</p>
       </div>
     </>
   )
