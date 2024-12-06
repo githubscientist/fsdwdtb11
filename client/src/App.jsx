@@ -7,19 +7,27 @@ const App = () => {
     dislikes: 0
   });
 
+  const [history, setHistory] = useState([]);
+
   function handleLike() {
     setReactions({
       ...reactions,
       likes: reactions.likes + 1
     });
+
+    setHistory([...history, 'L']);
   }
 
   function handleDislike() {
     setReactions({
       ...reactions,
       dislikes: reactions.dislikes + 1
-    })
+    });
+
+    setHistory([...history, 'D']);
   }
+
+  console.log(history);
 
   return (
     <>
