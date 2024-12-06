@@ -1,13 +1,17 @@
-import ChildComponent from "./components/ChildComponent";
+// Function Component
+// const App = () => {
+//   return <h1>Hello World!</h1>
+// }
 
-const App = () => {
-  const messageFromChild = (message) => {
-    console.log(message);
+// export default App;
+
+import React from "react";
+
+// Class Component
+class App extends React.Component {
+  render() {
+    return <h1>Hello World!</h1>
   }
-
-  return <ChildComponent
-    messageFromChild={messageFromChild}
-  />
 }
 
 export default App;
