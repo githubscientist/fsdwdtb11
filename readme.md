@@ -5,7 +5,7 @@
 - [x] What is React Hooks?
 - [x] Why it is Required in React ?
 - [x] UseState , useEffect
-- [ ] API calling using useEffect
+- [x] API calling using useEffect
 - [ ] Rendering API data in to JSX
 - [ ] Keys in Array
 - [ ] React Forms

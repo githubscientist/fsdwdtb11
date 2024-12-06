@@ -2,25 +2,30 @@ import { useEffect, useState } from "react";
 
 const App = () => {
 
-  const [count, setCount] = useState(0);
-  const [likes, setLikes] = useState(0);
+  const [posts, setPosts] = useState([]);
 
-  // runs when the component renders and only once
+  // runs on component render and on every state change for posts
   useEffect(() => {
-    console.log(count);
-  }, [count]);
+    console.log(posts);
+  }, [posts]);
+
+  // runs only once when the component renders
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setPosts(data);
+      })
+      .catch((error) => {
+        console.log('Error fetching posts...', error);
+      })
+  }, []);
 
   return (
     <>
-      <div>
-        <h1>Count: {count}</h1>
-        <button onClick={() => setCount(count + 1)}>Increase</button>
-      </div>
-
-      <div>
-        <h1>Likes: {likes}</h1>
-        <button onClick={() => setLikes(likes + 1)}>Like</button>
-      </div>
+      <h1>Posts</h1>
     </>
   )
 }
