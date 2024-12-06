@@ -2,37 +2,31 @@ import { useState } from "react";
 
 const App = () => {
 
-  const [count, setCount] = useState(0);
+  const [likes, setLikes] = useState(0);
+  const [dislikes, setDislikes] = useState(0);
 
-  const handleIncrease = () => {
-    if (count < 10) {
-      setCount(count + 1);
-    }
+  function handleLike() {
+    setLikes(likes + 1);
   }
 
-  const handleDecrease = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  }
-
-  const handleReset = () => {
-    setCount(0);
+  function handleDislike() {
+    setDislikes(dislikes + 1);
   }
 
   return (
-    <div>
-
-      <button
-        onClick={handleDecrease}
-      >-</button> {count} <button
-        onClick={handleIncrease}
-      >+</button>
-
-      {/* <button
-        onClick={handleReset}
-      >Reset</button> */}
-    </div>
+    <>
+      <button onClick={handleLike}><span className="material-symbols-outlined">
+        thumb_up
+      </span></button>
+      &nbsp;&nbsp;&nbsp;
+      <button onClick={handleDislike}><span className="material-symbols-outlined">
+        thumb_down
+      </span></button>
+      <div>
+        <p>Likes: {likes}</p>
+        <p>Dislikes: {dislikes}</p>
+      </div>
+    </>
   )
 }
 
