@@ -4,7 +4,7 @@
 
 - [x] What is React Hooks?
 - [x] Why it is Required in React ?
-- [ ] UseState , useEffect
+- [x] UseState , useEffect
 - [ ] API calling using useEffect
 - [ ] Rendering API data in to JSX
 - [ ] Keys in Array
@@ -24,4 +24,3 @@ Examples: useState, useEffect, useContext, useReducer, useMemo, useNavigate, ...
 - Cleaner code
 - Improved React Development
 - Backward Compatibility.
-
