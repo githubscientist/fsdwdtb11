@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const App = () => {
 
   const [count, setCount] = useState(0);
 
-  console.log(count);
+  // runs when the component renders and on every state change
+  useEffect(() => {
+    console.log(count);
+  });
 
   return (
     <div>
