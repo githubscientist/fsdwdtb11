@@ -8,7 +8,7 @@
 - [x] API calling using useEffect
 - [x] Rendering API data in to JSX
 - [x] Keys in Array
-- [ ] React Forms
+- [x] React Forms
 
 ### What is React Hooks?
 

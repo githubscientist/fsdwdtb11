@@ -1,37 +1,35 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const App = () => {
 
-  const [posts, setPosts] = useState([]);
-  const list = [];
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  // runs on component render and on every state change for posts
-  useEffect(() => {
-    console.log(posts);
-  }, [posts]);
-
-  // runs only once when the component renders
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setPosts(data);
-      })
-      .catch((error) => {
-        console.log('Error fetching posts...', error);
-      })
-  }, []);
+  const handleLogin = (event) => {
+    event.preventDefault();
+    console.log('logging in...');
+    console.log(email, password);
+  }
 
   return (
     <>
-      <h1>Posts</h1>
-      <ul>
-        {
-          posts.map((post, index) => <li key={index}>{post.title}</li>)
-        }
-      </ul>
+      <h1>Login</h1>
+      <form onSubmit={handleLogin}>
+        <input
+          type="email"
+          placeholder="Email..."
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password..."
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button type="submit">Login</button>
+      </form>
     </>
   )
 }
