@@ -1,17 +1,20 @@
-// Function Component
-// const App = () => {
-//   return <h1>Hello World!</h1>
-// }
+const App = () => {
 
-// export default App;
+  let count = 0;
 
-import React from "react";
-
-// Class Component
-class App extends React.Component {
-  render() {
-    return <h1>Hello World!</h1>
+  const handleIncrease = () => {
+    count++;
+    console.log(count);
   }
+
+  return (
+    <div>
+      <h1>Counter: {count}</h1>
+      <button
+        onClick={handleIncrease}
+      >Increase</button>
+    </div>
+  )
 }
 
 export default App;
