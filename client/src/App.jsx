@@ -4,10 +4,10 @@ const App = () => {
 
   const [count, setCount] = useState(0);
 
-  // runs when the component renders and on every state change
+  // runs when the component renders and only once
   useEffect(() => {
     console.log(count);
-  });
+  }, []);
 
   return (
     <div>
