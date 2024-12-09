@@ -1,49 +1,39 @@
-import { useState } from "react";
-import './App.css';
+import { useEffect, useState } from "react";
 
 const App = () => {
 
-  const [credentials, setCredentials] = useState({
-    email: '',
-    password: ''
-  });
+  const [currentWeather, setCurrentWeather] = useState({});
 
-  const handleLogin = (event) => {
-    event.preventDefault();
-    console.log('logging in...');
-    console.log(credentials.email, credentials.password);
-  }
+  useEffect(() => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=madurai&appid=9b3abd72af5e8ee4c215adb53b59b0e5`)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        setCurrentWeather(data);
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }, []);
 
-  const headerStyle = {
-    // textAlign: 'center'
-  }
+  useEffect(() => {
+    console.log(currentWeather)
+  }, [currentWeather]);
 
   return (
-    <>
-      <h1 style={headerStyle} className="text-3xl font-bold underline">Login</h1>
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="Email..."
-          value={credentials.email}
-          onChange={(e) => setCredentials({
-            ...credentials,
-            email: e.target.value
-          })}
-        />
-        <input
-          type="password"
-          placeholder="Password..."
-          value={credentials.password}
-          onChange={(e) => setCredentials({
-            ...credentials,
-            password: e.target.value
-          })}
-        />
+    <div>
+      <h1>Current Weather</h1>
+      {
+        currentWeather.weather && (
+          <div>
+            <h2>{currentWeather.weather[0].main}</h2>
+            <h2>{currentWeather.weather[0].description}</h2>
+          </div>
+        )
+      }
 
-        <button type="submit">Login</button>
-      </form>
-    </>
+    </div>
   )
 }
 
