@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './App.css';
 
 const App = () => {
 
@@ -13,9 +14,13 @@ const App = () => {
     console.log(credentials.email, credentials.password);
   }
 
+  const headerStyle = {
+    // textAlign: 'center'
+  }
+
   return (
     <>
-      <h1>Login</h1>
+      <h1 style={headerStyle} className="text-3xl font-bold underline">Login</h1>
       <form onSubmit={handleLogin}>
         <input
           type="email"
