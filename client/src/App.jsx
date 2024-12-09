@@ -1,39 +1,34 @@
-import { useReducer, useState } from "react";
-
-// define the initial state
-const initialState = {
-  count: 0
-}
-
-// define the reducer function
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'INCREMENT':
-      return {
-        ...state,
-        count: state.count + 1
-      }
-    case 'DECREMENT':
-      return {
-        ...state,
-        count: state.count - 1
-      }
-    default:
-      return state
-  }
-}
+import { useReducer } from "react"
+import { countReducer, initialState } from "./reducers/countReducer";
 
 const App = () => {
 
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(countReducer, initialState);
+
+  console.log(state.history);
+
+  const handleIncrement = () => {
+    dispatch({ type: "INCR" });
+  }
+
+  const handleDecrement = () => {
+    dispatch({ type: "DECR" });
+  }
+
+  const handleReset = () => {
+    dispatch({ type: "RESET" });
+  }
 
   return (
     <div>
-      <h1>Counter: {state.count}</h1>
-      <button onClick={() => dispatch({ type: "INCREMENT" })}>Increment</button>
-      <button onClick={() => dispatch({ type: "DECREMENT" })}>Decrement</button>
+      <h1>Count: {state.count}</h1>
+      <button onClick={handleIncrement}>Increment</button>
+      <button onClick={handleDecrement}>Decrement</button>
+      <button onClick={handleReset}>Reset</button>
+      <br /><br />
+      {state.history.join(', ')}
     </div>
   )
 }
 
-export default App;
+export default App
