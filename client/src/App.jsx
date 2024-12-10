@@ -4,22 +4,22 @@ const todos = [
   {
     id: 1,
     text: 'Buy groceries',
-    completed: false
+    completed: 'no'
   },
   {
     id: 2,
     text: 'Clean the house',
-    completed: true
+    completed: 'yes'
   },
   {
     id: 3,
     text: 'Go for a walk',
-    completed: false
+    completed: 'no'
   },
   {
     id: 4,
     text: 'Read a book',
-    completed: true
+    completed: 'yes'
   }
 ];
 

@@ -1,9 +1,5 @@
 const TodoItem = ({ todo }) => {
-    return todo.completed ? (
-        <li>{todo.text} {'✓'}</li>
-    ) : (
-        <li>{todo.text}</li>
-    )
+    return <li>{todo.text} {todo.completed == 'yes' && '✅'}</li>
 }
 
 export default TodoItem;
