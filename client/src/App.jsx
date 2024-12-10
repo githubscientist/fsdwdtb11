@@ -1,21 +1,25 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const App = () => {
+  let cnt = 0;
+  const count = useRef(0);
+  const [render, setRender] = useState(0);
 
-  const nameRef = useRef(null);
+  console.log(count);
+  console.log(`count.current = ${count.current}`);
+  console.log(`render = ${render}`);
+  console.log(`cnt = ${cnt}`);
 
-  function focusInput() {
-    nameRef.current.focus();
+  function handleIncrement() {
+    cnt++;
+    count.current++;
+    setRender(render + 1);
   }
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Enter your name"
-        ref={nameRef}
-      />
-      <button onClick={focusInput}>Focus Input</button>
+      <h1>Count: {count.current}</h1>
+      <button onClick={handleIncrement}>Increment</button>
     </div>
   )
 }
