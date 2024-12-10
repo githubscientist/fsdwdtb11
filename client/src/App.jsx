@@ -1,34 +1,23 @@
-import { useReducer } from "react"
-import { countReducer, initialState } from "./reducers/countReducer";
+import { useRef } from "react";
 
 const App = () => {
 
-  const [state, dispatch] = useReducer(countReducer, initialState);
+  const nameRef = useRef(null);
 
-  console.log(state.history);
-
-  const handleIncrement = () => {
-    dispatch({ type: "INCR" });
-  }
-
-  const handleDecrement = () => {
-    dispatch({ type: "DECR" });
-  }
-
-  const handleReset = () => {
-    dispatch({ type: "RESET" });
+  function focusInput() {
+    nameRef.current.focus();
   }
 
   return (
     <div>
-      <h1>Count: {state.count}</h1>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Decrement</button>
-      <button onClick={handleReset}>Reset</button>
-      <br /><br />
-      {state.history.join(', ')}
+      <input
+        type="text"
+        placeholder="Enter your name"
+        ref={nameRef}
+      />
+      <button onClick={focusInput}>Focus Input</button>
     </div>
   )
 }
 
-export default App
+export default App;
