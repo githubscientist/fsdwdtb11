@@ -1,25 +1,33 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useState } from "react";
+import React from "react";
+
+const Counter = ({ onIncrement }) => {
+
+  console.log('rendering...');
+
+  return (
+    <button
+      onClick={onIncrement}
+    >Increment</button>
+  )
+}
+
+const MemoizedCounter = React.memo(Counter);
 
 const App = () => {
-  let cnt = 0;
-  const count = useRef(0);
-  const [render, setRender] = useState(0);
 
-  console.log(count);
-  console.log(`count.current = ${count.current}`);
-  console.log(`render = ${render}`);
-  console.log(`cnt = ${cnt}`);
+  const [count, setCount] = useState(0);
 
-  function handleIncrement() {
-    cnt++;
-    count.current++;
-    setRender(render + 1);
-  }
+  const increment = useCallback(() => {
+    setCount(prev => prev + 1);
+  }, []);
 
   return (
     <div>
-      <h1>Count: {count.current}</h1>
-      <button onClick={handleIncrement}>Increment</button>
+      <p>Count: {count}</p>
+      <MemoizedCounter
+        onIncrement={increment}
+      />
     </div>
   )
 }
