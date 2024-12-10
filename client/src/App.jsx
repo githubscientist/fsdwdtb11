@@ -1,33 +1,23 @@
-import { useCallback, useState } from "react";
-import React from "react";
-
-const Counter = ({ onIncrement }) => {
-
-  console.log('rendering...');
-
-  return (
-    <button
-      onClick={onIncrement}
-    >Increment</button>
-  )
-}
-
-const MemoizedCounter = React.memo(Counter);
+import { useMemo, useState } from "react";
 
 const App = () => {
 
-  const [count, setCount] = useState(0);
+  const [state, setState] = useState(0);
 
-  const increment = useCallback(() => {
-    setCount(prev => prev + 1);
-  }, []);
+  let computedValue = useMemo(() => {
+    let sum = 0;
+
+    for (let i = 0; i < 1000000; i++) {
+      sum += i;
+    }
+
+    return sum + state;
+  }, [state]);
 
   return (
     <div>
-      <p>Count: {count}</p>
-      <MemoizedCounter
-        onIncrement={increment}
-      />
+      <h1>Computed Value: {computedValue}</h1>
+      <button onClick={() => setState(state + 1)}>Update State</button>
     </div>
   )
 }

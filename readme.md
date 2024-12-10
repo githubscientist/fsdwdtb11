@@ -61,3 +61,7 @@ export default App;
 - It is used to prevent a function from being recreated on every render.
 - Here, increment function is memoized and is not recreated on every render.
 - Additionally, we have used React.memo to memoize the Counter component, which helps in performance optimization. The Counter component (as a child component) does not re-render on every render of the App (parent) component.
+
+### useMemo
+
+- useMemo is a hook that allows you to memoize a value which is a result of an expensive function.
