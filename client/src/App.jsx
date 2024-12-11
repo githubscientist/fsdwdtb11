@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import NavWrapper from "./wrappers/NavWrapper";
+import usersLoader from "./loaders/usersLoader";
 
 const App = () => {
 
@@ -13,7 +14,9 @@ const App = () => {
       children: [
         {
           path: '',
-          element: <Home />
+          element: <Home />,
+          loader: usersLoader,
+          hydrateFallbackElement: <div>Loading...</div>
         },
         {
           path: "register",
