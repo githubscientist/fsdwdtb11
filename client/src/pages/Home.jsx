@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Home = () => {
 
@@ -13,7 +13,7 @@ const Home = () => {
             <h3>Contributors</h3>
             <ul>
                 {
-                    users.map(user => <li key={user.id}>{user.name}</li>)
+                    users.map(user => <li key={user.id}><Link to={`/user/${user.id}`}>{user.name}</Link></li>)
                 }
             </ul>
         </div>

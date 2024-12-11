@@ -4,6 +4,9 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import NavWrapper from "./wrappers/NavWrapper";
 import usersLoader from "./loaders/usersLoader";
+import User from "./pages/User";
+import userLoader from "./loaders/userLoader";
+import Error from "./pages/Error";
 
 const App = () => {
 
@@ -25,9 +28,19 @@ const App = () => {
         {
           path: "login",
           element: <Login />
-        }
+        },
       ]
     },
+    {
+      path: "/user/:id",
+      element: <User />,
+      loader: userLoader,
+      hydrateFallbackElement: <div>Loading...</div>
+    },
+    {
+      path: "*",
+      element: <Error />
+    }
   ];
 
   const router = createBrowserRouter(routes, {
