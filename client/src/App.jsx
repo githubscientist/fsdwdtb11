@@ -1,45 +1,19 @@
-import { useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const App = () => {
 
-  // ' ❌' ' ✅'
-  const [todos, setTodos] = useState([
+  const router = createBrowserRouter([
     {
-      id: 1,
-      text: "Learn React",
-      completed: false
+      path: '/',
+      element: <h1>Hello World!</h1>
     },
     {
-      id: 2,
-      text: "Buy groceries",
-      completed: false
-    },
-    {
-      id: 3,
-      text: "Watch a movie",
-      completed: true
-    },
-    {
-      id: 4,
-      text: "Go for a walk",
-      completed: false
+      path: "/contact",
+      element: <h1>Contact Us</h1>
     }
-  ]);
+  ])
 
-  console.log(todos);
-
-  return (
-    <div>
-      <h1>Todo List</h1>
-      <ul>
-        {
-          todos.map(todo => {
-            return <li key={todo.id}>{todo.text} {todo.completed && ' ✅'} {!todo.completed && ' ❌'}</li>;
-          })
-        }
-      </ul>
-    </div>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App;
