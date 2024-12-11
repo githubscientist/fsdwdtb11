@@ -34,7 +34,7 @@ const App = () => {
       <ul>
         {
           todos.map(todo => {
-            return todo.completed === true ? <li key={todo.id}>{todo.text + ' ✅'}</li> : <li key={todo.id}>{todo.text}</li>;
+            return <li key={todo.id}>{todo.text} {todo.completed && ' ✅'} {!todo.completed && ' ❌'}</li>;
           })
         }
       </ul>
