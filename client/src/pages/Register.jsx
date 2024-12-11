@@ -1,4 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 const Register = () => {
+
+    const navigate = useNavigate();
+
+    function handleNavigateToLogin() {
+        navigate('/login');
+    }
+
     return (
         <div>
             <h1>Register</h1>
@@ -25,6 +34,9 @@ const Register = () => {
                     <button type="submit">Register</button>
                 </div>
             </form>
+            <p
+                onClick={handleNavigateToLogin}
+            >Already have an account? <button>Login</button></p>
         </div>
     )
 }
