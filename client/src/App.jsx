@@ -1,40 +1,45 @@
-import TodoItem from "./components/TodoItem";
-
-const todos = [
-  {
-    id: 1,
-    text: 'Buy groceries',
-    completed: 'no'
-  },
-  {
-    id: 2,
-    text: 'Clean the house',
-    completed: 'yes'
-  },
-  {
-    id: 3,
-    text: 'Go for a walk',
-    completed: 'no'
-  },
-  {
-    id: 4,
-    text: 'Read a book',
-    completed: 'yes'
-  }
-];
+import { useState } from "react";
 
 const App = () => {
+
+  // ' ❌' ' ✅'
+  const [todos, setTodos] = useState([
+    {
+      id: 1,
+      text: "Learn React",
+      completed: false
+    },
+    {
+      id: 2,
+      text: "Buy groceries",
+      completed: false
+    },
+    {
+      id: 3,
+      text: "Watch a movie",
+      completed: true
+    },
+    {
+      id: 4,
+      text: "Go for a walk",
+      completed: false
+    }
+  ]);
+
+  console.log(todos);
+
   return (
     <div>
-      <h1>Todos</h1>
+      <h1>Todo List</h1>
       <ul>
         {
-          todos.map(todo => (
-            <TodoItem
-              key={todo.id}
-              todo={todo}
-            />
-          ))
+          todos.map(todo => {
+            if (todo.completed === true) {
+              return <li key={todo.id}>{todo.text + ' ✅'}</li>;
+            }
+
+            return <li key={todo.id}>{todo.text}</li>;
+          })
         }
       </ul>
     </div>
