@@ -1,15 +1,27 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import NavWrapper from "./wrappers/NavWrapper";
 
 const App = () => {
 
   const routes = [
     {
-      path: '/',
-      element: <h1>Hello World!</h1>
+      path: "/",
+      element: <NavWrapper />,
     },
     {
-      path: "/contact",
-      element: <h1>Contact Us</h1>
+      path: '/home',
+      element: <Home />
+    },
+    {
+      path: "/register",
+      element: <Register />
+    },
+    {
+      path: "/login",
+      element: <Login />
     }
   ];
 
