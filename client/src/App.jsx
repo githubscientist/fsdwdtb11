@@ -10,10 +10,12 @@ const App = () => {
     {
       path: "/",
       element: <NavWrapper />,
-    },
-    {
-      path: '/home',
-      element: <Home />
+      children: [
+        {
+          path: 'home',
+          element: <Home />
+        },
+      ]
     },
     {
       path: "/register",

@@ -1,3 +1,5 @@
+import { Outlet } from "react-router-dom";
+
 const NavWrapper = () => {
     return (
         <div>
@@ -8,6 +10,10 @@ const NavWrapper = () => {
                     <li><a href="/login">Login</a></li>
                 </ul>
             </nav>
+
+            <main>
+                <Outlet />
+            </main>
         </div>
     )
 }
