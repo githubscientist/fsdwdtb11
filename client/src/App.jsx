@@ -35,7 +35,8 @@ const App = () => {
       path: "/user/:id",
       element: <User />,
       loader: userLoader,
-      hydrateFallbackElement: <div>Loading...</div>
+      hydrateFallbackElement: <div>Loading...</div>,
+      errorElement: <Error />
     },
     {
       path: "*",
