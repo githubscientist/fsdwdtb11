@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import axios from "axios";
+import instance from "./services/instance";
 
 const App = () => {
 
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/todos/1')
+    instance.get('/todos/1')
       .then((response) => {
         console.log(response.data);
       })
