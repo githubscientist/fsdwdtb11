@@ -1,36 +1,22 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home";
-import todosLoader from "./loaders/todosLoader";
-
-const routes = [
-  {
-    path: "/",
-    element: <Home />,
-    loader: todosLoader,
-    hydrateFallbackElement: <p>Loading...</p>
-  }
-]
-
-const router = createBrowserRouter(routes, {
-  future: {
-    v7_relativeSplatPath: true,
-    v7_fetcherPersist: true,
-    v7_normalizeFormMethod: true,
-    v7_partialHydration: true,
-    v7_skipActionStatusRevalidation: true,
-    v7_skipActionErrorRevalidation: true
-  }
-})
-
+import { useState } from "react"
 
 const App = () => {
 
-  return <RouterProvider
-    router={router}
-    future={{
-      v7_startTransition: true
-    }}
-  />
+  const [count, setCount] = useState(0);
+
+  const handlePlus = () => {
+    setCount(count + 1);
+  }
+
+  const handleMinus = () => {
+    setCount(count - 1);
+  }
+
+  return (
+    <div>
+      <button onClick={handleMinus}>-</button><p style={{ display: "inline" }}> {count} </p><button onClick={handlePlus}>+</button>
+    </div>
+  )
 }
 
 export default App;
