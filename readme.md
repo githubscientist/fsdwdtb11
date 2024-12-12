@@ -2,11 +2,13 @@
 
 ## Topics
 
-- [x] React Router
+- [x] XHR vs Fetch vs Axios
 
-### React Router
+### XHR vs Fetch vs Axios
 
-- It is a routing library for React.
-- It is used to navigate between different pages in a React application.
-- It will help us to load the component based on the URL.
-- It will help us bring the browser's history.
+- XHR: XMLHttpRequest
+  - To make HTTP requests (old way)
+- Fetch: Fetch API
+  - Modern way to make HTTP requests
+- Axios: Axios
+  - Library to make HTTP requests
