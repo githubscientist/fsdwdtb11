@@ -1,37 +1,23 @@
-import { useReducer, useState } from "react"
-
-const initialState = {
-  count: 0
-}
-
-const reducer = (state, action) => {
-  if (action.type === 'PLUS') {
-    return {
-      count: state.count + 1
-    }
-  } else if (action.type === 'MINUS') {
-    return {
-      count: state.count - 1
-    }
-  }
-  return state;
-}
+import { useDispatch, useSelector } from "react-redux"
+import { minus, plus, selectCount } from "./redux/features/count/countSlice"
 
 const App = () => {
 
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const count = useSelector(selectCount);
+
+  const dispatch = useDispatch();
 
   const handlePlus = () => {
-    dispatch({ type: "PLUS" });
+    dispatch(plus());
   }
 
   const handleMinus = () => {
-    dispatch({ type: "MINUS" });
+    dispatch(minus());
   }
 
   return (
     <div>
-      <button onClick={handleMinus}>-</button><p style={{ display: "inline" }}> {state.count} </p><button onClick={handlePlus}>+</button>
+      <button onClick={handleMinus}>-</button><p style={{ display: "inline" }}> {count} </p><button onClick={handlePlus}>+</button>
     </div>
   )
 }
