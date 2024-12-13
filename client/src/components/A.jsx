@@ -1,15 +1,15 @@
 import React, { useContext } from 'react'
-import AuthContext from '../contexts/AuthContext'
+import { NameContext } from '../contexts/NameContext';
 
 const A = () => {
 
-  const { user } = useContext(AuthContext);
+  const { name } = useContext(NameContext);
 
   return (
     <div>
-      <h1>{!user ? 'You are not logged in' : 'You are logged in'}</h1>
+      <h1>Name: {name}</h1>
     </div>
   )
 }
 
-export default A
+export default A;

@@ -1,21 +1,20 @@
 import React, { useContext } from 'react'
-import AuthContext from '../contexts/AuthContext'
+import { NameContext } from '../contexts/NameContext';
 
 const B = () => {
 
-    const { user, setUser } = useContext(AuthContext);
+    const { name, setName } = useContext(NameContext);
 
     return (
         <div>
-            <button disabled={user} onClick={() => setUser({
-                user: 'sathish'
-            })}>Login</button>
-            &nbsp;&nbsp;
-            {
-                user && <button onClick={() => setUser(null)}>Logout</button>
-            }
+            <input
+                type='text'
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+            />
+            <button>Update</button>
         </div>
     )
 }
 
-export default B;
+export default B

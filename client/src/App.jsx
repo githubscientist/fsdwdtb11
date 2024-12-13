@@ -1,19 +1,16 @@
-import { useState } from "react";
-import A from "./components/A";
-import B from "./components/B";
-import AuthContext from "./contexts/AuthContext";
+import React from 'react'
+import B from './components/B';
+import A from './components/A';
+import { NameProvider } from './contexts/NameContext';
 
 const App = () => {
-
-  const [user, setUser] = useState(null);
-
   return (
-    <AuthContext.Provider value={{ user, setUser }}>
+    <NameProvider>
       <div>
         <A />
         <B />
       </div>
-    </AuthContext.Provider>
+    </NameProvider>
   )
 }
 
