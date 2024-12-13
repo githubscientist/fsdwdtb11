@@ -1,24 +1,19 @@
-import { useDispatch, useSelector } from "react-redux"
-import { minus, plus, selectCount } from "./redux/features/count/countSlice"
+import { useState } from "react";
+import A from "./components/A";
+import B from "./components/B";
+import AuthContext from "./contexts/AuthContext";
 
 const App = () => {
 
-  const count = useSelector(selectCount);
-
-  const dispatch = useDispatch();
-
-  const handlePlus = () => {
-    dispatch(plus());
-  }
-
-  const handleMinus = () => {
-    dispatch(minus());
-  }
+  const [user, setUser] = useState(null);
 
   return (
-    <div>
-      <button onClick={handleMinus}>-</button><p style={{ display: "inline" }}> {count} </p><button onClick={handlePlus}>+</button>
-    </div>
+    <AuthContext.Provider value={{ user, setUser }}>
+      <div>
+        <A />
+        <B />
+      </div>
+    </AuthContext.Provider>
   )
 }
 
