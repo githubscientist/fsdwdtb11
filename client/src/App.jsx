@@ -4,6 +4,7 @@ import todosLoader from "./loaders/todosLoader";
 import Todo from "./components/Todo";
 import todoLoader from "./loaders/todoLoader";
 import AddTodo from "./components/AddTodo";
+import EditTodo from "./components/EditTodo";
 
 const App = () => {
 
@@ -23,6 +24,12 @@ const App = () => {
     {
       path: "/todo/new",
       element: <AddTodo />
+    },
+    {
+      path: "/todo/edit/:id",
+      element: <EditTodo />,
+      loader: todoLoader,
+      hydrateFallbackElement: <p>Loading...</p>
     }
   ]
 

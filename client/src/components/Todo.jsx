@@ -33,7 +33,7 @@ const Todo = () => {
             <p>Status: {todo.completed ? "Completed" : "Incomplete"}</p>
             <p>Created At: {todo.createdAt}</p>
             <div>
-                <button>Edit</button> &nbsp;&nbsp;<button onClick={handleDelete}>Delete</button>
+                <button onClick={() => navigate('/todo/edit/' + todo.id)}>Edit</button> &nbsp;&nbsp;<button onClick={handleDelete}>Delete</button>
             </div>
         </div>
     )

@@ -28,6 +28,13 @@ const todoServices = {
         } catch (error) {
             console.log('Error adding todo', error);
         }
+    },
+    updateTodo: async (id, todo) => {
+        try {
+            return await instance.put('/todos/' + id, todo);
+        } catch (error) {
+            console.log('Error updating todo', error);
+        }
     }
 }
 
