@@ -7,6 +7,13 @@ const todoServices = {
         } catch (error) {
             console.log('Error fetching todos', error);
         }
+    },
+    getTodo: async (id) => {
+        try {
+            return await instance.get('/todos/' + id);
+        } catch (error) {
+            console.log('Error fetching todo', error);
+        }
     }
 }
 

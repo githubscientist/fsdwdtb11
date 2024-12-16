@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 
 const Todos = () => {
 
@@ -30,7 +30,7 @@ const Todos = () => {
                                 return !todo.completed;
                             }
                         })
-                        .map(todo => <li key={todo.id}>{todo.title}</li>)
+                        .map(todo => <li key={todo.id}><Link to={`/todo/${todo.id}`}>{todo.title}</Link></li>)
                 }
             </ul>
         </div >
