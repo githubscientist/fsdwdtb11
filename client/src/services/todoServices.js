@@ -14,6 +14,13 @@ const todoServices = {
         } catch (error) {
             console.log('Error fetching todo', error);
         }
+    },
+    deleteTodo: async (id) => {
+        try {
+            return await instance.delete('/todos/' + id);
+        } catch (error) {
+            console.log('Error delete todo', error);
+        }
     }
 }
 
