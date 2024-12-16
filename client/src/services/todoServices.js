@@ -21,6 +21,13 @@ const todoServices = {
         } catch (error) {
             console.log('Error delete todo', error);
         }
+    },
+    addTodo: async (todo) => {
+        try {
+            return await instance.post('/todos', todo);
+        } catch (error) {
+            console.log('Error adding todo', error);
+        }
     }
 }
 

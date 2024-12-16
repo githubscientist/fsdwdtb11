@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Link, useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData, useNavigate } from 'react-router-dom'
 
 const Todos = () => {
 
     const todos = useLoaderData();
+    const navigate = useNavigate();
 
     const [status, setStatus] = useState('all');
 
@@ -33,6 +34,10 @@ const Todos = () => {
                         .map(todo => <li key={todo.id}><Link to={`/todo/${todo.id}`}>{todo.title}</Link></li>)
                 }
             </ul>
+
+            <div>
+                <button onClick={() => navigate('/todo/new')}>New Todo</button>
+            </div>
         </div >
     )
 }

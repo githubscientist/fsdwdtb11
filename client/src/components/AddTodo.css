@@ -1,0 +1,17 @@
+.addForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.addForm input {
+    width: 300px;
+}
+
+.addForm select {
+    width: 100px;
+}
+
+.addForm button {
+    width: 100px;
+}

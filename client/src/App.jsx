@@ -3,6 +3,7 @@ import Todos from "./components/Todos";
 import todosLoader from "./loaders/todosLoader";
 import Todo from "./components/Todo";
 import todoLoader from "./loaders/todoLoader";
+import AddTodo from "./components/AddTodo";
 
 const App = () => {
 
@@ -18,6 +19,10 @@ const App = () => {
       element: <Todo />,
       loader: todoLoader,
       hydrateFallbackElement: <p>Loading...</p>
+    },
+    {
+      path: "/todo/new",
+      element: <AddTodo />
     }
   ]
 
