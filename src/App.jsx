@@ -4,6 +4,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import HeaderWrapper from "./wrappers/HeaderWrapper";
 import Dashboard from "./pages/Dashboard";
+import jobsLoader from "./loaders/jobsLoader";
+import { hydrate } from "react-dom";
 
 const routes = [
   {
@@ -24,7 +26,9 @@ const routes = [
       },
       {
         path: "/dashboard",
-        element: <Dashboard />
+        element: <Dashboard />,
+        loader: jobsLoader,
+        hydrateFallbackElement: <p>Loading...</p>
       }
     ]
   }
