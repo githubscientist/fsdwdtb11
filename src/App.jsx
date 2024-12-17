@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import HeaderWrapper from "./wrappers/HeaderWrapper";
+import Dashboard from "./pages/Dashboard";
 
 const routes = [
   {
@@ -20,6 +21,10 @@ const routes = [
       {
         path: "/register",
         element: <Register />
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />
       }
     ]
   }

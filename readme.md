@@ -3,7 +3,7 @@
 ## Topics
 
 - [ ] Loaders via instance & services
-- [ ] React Router
+- [x] React Router
 - [ ] Pagination
 - [ ] Hooks
-- [ ] Redux Toolkit vs useContext
+- [x] Redux Toolkit vs useContext
