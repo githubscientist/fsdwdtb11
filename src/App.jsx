@@ -1,15 +1,27 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
+import HeaderWrapper from "./wrappers/HeaderWrapper";
 
 const routes = [
   {
     path: "/",
-    element: <Home />
-  },
-  {
-    path: "/login",
-    element: <Login />
+    element: <HeaderWrapper />,
+    children: [
+      {
+        index: true,
+        element: <Home />
+      },
+      {
+        path: "/login",
+        element: <Login />
+      },
+      {
+        path: "/register",
+        element: <Register />
+      }
+    ]
   }
 ];
 
