@@ -5,7 +5,6 @@ import Register from "./pages/Register";
 import HeaderWrapper from "./wrappers/HeaderWrapper";
 import Dashboard from "./pages/Dashboard";
 import jobsLoader from "./loaders/jobsLoader";
-import { hydrate } from "react-dom";
 
 const routes = [
   {

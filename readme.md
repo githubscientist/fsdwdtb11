@@ -2,7 +2,7 @@
 
 ## Topics
 
-- [ ] Loaders via instance & services
+- [x] Loaders via instance & services
 - [x] React Router
 - [ ] Pagination
 - [ ] Hooks

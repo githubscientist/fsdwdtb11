@@ -1,9 +1,10 @@
+import instance from "../services/instance";
+
 const jobsLoader = async () => {
     try {
-        const response = await fetch(`https://676195b946efb37323724255.mockapi.io/jobs`);
-        const data = await response.json();
+        const response = await instance.get('/jobs');
 
-        return data;
+        return response.data;
     } catch (error) {
         return null;
     }
