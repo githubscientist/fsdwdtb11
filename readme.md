@@ -4,6 +4,6 @@
 
 - [x] Loaders via instance & services
 - [x] React Router
-- [ ] Pagination
+- [x] Pagination
 - [ ] Hooks
 - [x] Redux Toolkit vs useContext
